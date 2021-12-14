@@ -1,9 +1,9 @@
-const OPEN_WEATHER_MAP_TOKEN = '4e9aaf9b42358e39ec80d8c47259a8a9';
+const OPEN_WEATHER_MAP_TOKEN = '4e9aaf9b42358e39ec80d8c47259a8a9&units=imperial';
 const BASE_URL = `https://api.openweathermap.org/data/2.5/weather/`;
 const SERVER_URL = `http://localhost:3000`
 
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
 
 const getWeatherMap = async (baseUrl, zipCode, apiKey) => {
     const res = await fetch(`${baseUrl}?zip=${zipCode}&appid=${apiKey}`)
